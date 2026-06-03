@@ -35,15 +35,15 @@
     }
   }
 
-  // @keyframes neonGlow {
-  //   from {
-  //     text-shadow: 0 0 4px #bdc9f929;
-  //   }
+  @keyframes neonGlow {
+    from {
+      text-shadow: 0 0 4px #bdc9f929;
+    }
 
-  //   to {
-  //     text-shadow: 0 0 10px #bdc9f981, 0 0 20px #b6a7e2b2;
-  //   }
-  // }
+    to {
+      text-shadow: 0 0 10px #bdc9f981, 0 0 20px #b6a7e2b2;
+    }
+  }
 
   &__scroll {
     position: absolute;
@@ -85,15 +85,15 @@
     }
   }
 
-  // @keyframes scrollFlow {
-  //   0% {
-  //     top: -100%;
-  //   }
+  @keyframes scrollFlow {
+    0% {
+      top: -100%;
+    }
 
-  //   100% {
-  //     top: 100%;
-  //   }
-  // }
+    100% {
+      top: 100%;
+    }
+  }
 }
 
 
@@ -245,7 +245,7 @@
     text-align: right;
   }
 
-  &_more span {
+  &__more span {
     font-size: .9rem;
     position: relative;
     padding: 8px 20px;

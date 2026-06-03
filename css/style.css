@@ -383,6 +383,22 @@ body .main-content {
     font-size: 2rem;
   }
 }
+@-webkit-keyframes neonGlow {
+  from {
+    text-shadow: 0 0 4px rgba(189, 201, 249, 0.1607843137);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(189, 201, 249, 0.5058823529), 0 0 20px rgba(182, 167, 226, 0.6980392157);
+  }
+}
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 4px rgba(189, 201, 249, 0.1607843137);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(189, 201, 249, 0.5058823529), 0 0 20px rgba(182, 167, 226, 0.6980392157);
+  }
+}
 .first-view__scroll {
   position: absolute;
   bottom: 5%;
@@ -429,6 +445,22 @@ body .main-content {
   background: linear-gradient(transparent, #BDC9F9, transparent);
   -webkit-animation: scrollFlow 2s infinite;
           animation: scrollFlow 2s infinite;
+}
+@-webkit-keyframes scrollFlow {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes scrollFlow {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
 }
 
 /* ----- 共通section-container ----- */
@@ -583,7 +615,7 @@ body .main-content {
 .work-card__more {
   text-align: right;
 }
-.work-card_more span {
+.work-card__more span {
   font-size: 0.9rem;
   position: relative;
   padding: 8px 20px;
@@ -591,7 +623,7 @@ body .main-content {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.work-card_more span:hover {
+.work-card__more span:hover {
   color: var(--logo-color-1);
   -webkit-animation: text-blur 0.5s;
           animation: text-blur 0.5s;
