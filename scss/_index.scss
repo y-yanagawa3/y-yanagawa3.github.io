@@ -1,0 +1,317 @@
+@import './mixin';
+
+:root {
+  --logo-color-1: rgb(189, 201, 249);
+  --logo-color-2: rgb(182, 167, 226);
+  --logo-color-3: rgb(200, 162, 228);
+
+  --main-text: rgb(241, 244, 249);
+  --sub-text: rgba(255, 255, 255, 0.6);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+/* ---------- font ---------- */
+.noto-serif-jp {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  // font-weight: 2~900;
+  font-style: normal;
+}
+
+.cinzel-decorative-regular {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cinzel-decorative-black {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ---------- body ---------- */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background: radial-gradient(circle at center, #1a2a44 0%, #0a0f1a 100%);
+  color: var(--main-text);
+
+  @include media-tb {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: visible;
+  }
+
+  .bg-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--logo-color-1);
+    filter: blur(70px);
+    border-radius: 50%;
+    z-index: -1;
+
+    &--left {
+      top: 10%;
+      left: 25%;
+    }
+
+    &--right {
+      bottom: 10%;
+      right: 10%;
+      background: var(--logo-color-3);
+    }
+  }//bg-glow
+
+  .sidebar {
+    width: 20%;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include media-tb {
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      padding: 0.5rem;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2px;
+      height: 100vh;
+      background: linear-gradient(to bottom,
+          transparent,
+          var(--logo-color-1),
+          var(--logo-color-3),
+          var(--logo-color-1),
+          transparent);
+      width: 2px;
+      opacity: 0.7;
+      transform: scaleX(0.5) scaleY(0);
+      transform-origin: center;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::after {
+      transform: scaleY(1);
+    }
+
+    &__logo {
+      width: 100%;
+      padding: 10px 10px 40px;
+      font-family: "Cinzel Decorative", serif;
+      font-weight: 400;
+      font-style: normal;
+
+      @include media-tb {
+        display: flex;
+        padding: 10px 10px 0;
+      }
+
+      &-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &-img {
+        width: 100%;
+        max-width: 125px;
+
+        @include media-tb {
+          max-width: 50px;
+        }
+      }
+    }
+
+
+    &__logo-text {
+      font-size: 1.2rem;
+
+      @include media-tb {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__logo-sub {
+      font-size: 1rem;
+
+      @include media-tb {
+        font-size: 0.6rem;
+      }
+    }
+
+    &__nav {
+      text-align: center;
+
+      @include media-tb {
+        width: 100%;
+        margin-top: auto;
+
+      }
+
+      &-list {
+        @include media-tb {
+          padding: 0;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+
+      &-item {
+        width: 100%;
+        padding-bottom: 10px;
+
+        @include media-tb {
+          padding: 0;
+        }
+      }
+
+      &-link {
+        width: 65px;
+        letter-spacing: 2px;
+        line-height: 3;
+        display: block;
+        transition: .3s;
+        margin: 0 auto;
+
+        @include media-tb {
+          font-size: 0.8rem;
+        }
+
+        @include media-sp {
+          width: 50px;
+          font-size: 0.7rem;
+        }
+
+        &:hover {
+          color: var(--logo-color-1);
+          text-shadow: 0 0 8px var(--logo-color-1);
+        }
+
+        &:hover .sidebar__icon {
+          color: var(--logo-color-1);
+        }
+      }
+
+      &-label {
+        line-height: 2.5;
+        font-size: 0.8rem;
+      }
+
+      &-button {
+        position: relative;
+        margin: 0 auto;
+        width: 50px;
+        aspect-ratio: 1/1;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+          15px 25px 10px rgba(0, 0, 0, 0.05),
+          15px 25px 10px rgba(0, 0, 0, 0.05),
+          inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+
+        @include media-tb {
+          width: 40px;
+        }
+
+        @include media-sp {
+          width: 30px;
+        }
+
+        &:hover {
+          background-position: left;
+          box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1), 0px 0px 10px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+
+    &__icon {
+      font-size: 1.5rem;
+      color: var(--main-text);
+      transition: all 0.3s ease;
+
+      @include media-tb {
+        font-size: 1rem;
+      }
+    }
+
+  }//sidebar
+
+  .main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    background: radial-gradient(circle at center,
+        rgba(26, 42, 68, 0.8) 0%,
+        rgba(10, 15, 26, 0.8) 100%);
+
+    @include media-tb {
+      width: 100%;
+      height: auto;
+      overflow-y: scroll;
+
+    }
+
+  }
+
+}//body
