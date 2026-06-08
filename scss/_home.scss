@@ -398,7 +398,7 @@
 
   &__flex {
     display: flex;
-    gap: 60px;
+    // gap: 20px;
     align-items: center;
     margin: 50px auto 0;
 
@@ -431,6 +431,7 @@
 
   &__body {
     flex: 2;
+    padding-right: 40px;
   }
 
   &__text--main {
