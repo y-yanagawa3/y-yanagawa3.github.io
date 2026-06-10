@@ -1241,19 +1241,23 @@ body .main-content {
   display: inline-block;
   color: rgb(189, 201, 249);
 }
-.work-detail #work-url-wrapper {
+.work-detail #work-url-wrapper,
+.work-detail #work-code-wrapper {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.work-detail #work-url-wrapper a {
+.work-detail #work-url-wrapper a,
+.work-detail #work-code-wrapper a {
   padding-left: 3px;
 }
-.work-detail #work-url-wrapper:hover {
+.work-detail #work-url-wrapper a:hover,
+.work-detail #work-code-wrapper a:hover {
   color: var(--logo-color-1);
 }
-.work-detail__url-icon {
+.work-detail__url-icon, .work-detail__code-icon {
   padding: 5px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  text-align: end;
 }
 .work-detail__main-view {
   padding: 5vw;

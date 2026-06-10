@@ -46,21 +46,24 @@
     }
   }
 
-  #work-url-wrapper {
+  #work-url-wrapper,
+  #work-code-wrapper {
     transition: 0.3s;
 
     a {
       padding-left: 3px;
-    }
 
-    &:hover {
-      color: var(--logo-color-1);
+      &:hover {
+        color: var(--logo-color-1);
+      }
     }
   }
 
-  &__url-icon {
+  &__url-icon,
+  &__code-icon {
     padding: 5px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-align: end;
   }
 
   &__main-view {
