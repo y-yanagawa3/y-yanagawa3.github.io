@@ -48,10 +48,10 @@
 
   #work-url-wrapper,
   #work-code-wrapper {
-    transition: 0.3s;
 
-    a {
+    .value {
       padding-left: 3px;
+      transition: 0.3s;
 
       &:hover {
         color: var(--logo-color-1);
